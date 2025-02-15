@@ -1,0 +1,44 @@
+/* LAVINIA TUDOR 334CC */
+
+variable x ::= { a, b, c } ;
+
+NUME_GRAMATICA ::= Grammar (
+    nonterminals :: { S, S1 } ;
+    alphabet :: { a, b } ;
+    start_symbol :: S ;
+
+    S -> a&S | b&S1 | e ;
+    S1 -> a&S1 | b&S ;
+) ;;
+
+abcdefgh ::= FiniteAutomaton (
+    alphabet :: { a, b, c } ;
+    states :: { q0, q1, q2 } ;
+    initial_state :: q0 ;
+    final_states :: { q2 } ;
+
+    q0 -> (
+        a, e -> q1 ;
+        b -> q2 ;
+    ) ;
+
+    q1 -> (
+        b -> q1 ;
+        c -> q2 ;
+    ) ;
+
+    q2 -> (
+        a, b -> q2 ;
+    ) ;
+) ;;
+
+grammar12345 ::= Grammar (
+    nonterminals :: { S, S1, S2 } ;
+    alphabet :: { x, y, z } ;
+    start_symbol :: S ;
+    variable variabila_locala ::= { w } ;
+
+    S -> x&S1 | y&S2 ;
+    P -> z&S | x&S1 ;
+    Q -> y&S2 | z&S1 | e ;
+) ;;

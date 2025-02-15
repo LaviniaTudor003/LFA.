@@ -1,0 +1,66 @@
+/* LAVINIA TUDOR 334CC */
+
+variable x ::= { a, b } ;
+
+afd_test ::= FiniteAutomaton (
+    alphabet :: { a, b, c, d } ;
+    % alphabet :: { f, g, h } ;
+    states :: { q0, q1 } ;
+    initial_state :: q0 ;
+    final_states :: { q1 } ;
+    variable y1 ::= { b, c } ;
+
+    /* q0 -> (
+        a, b -> q1 ;
+    ) */
+
+    q0 -> (
+        x -> q0 ;
+        c, d -> q1 ;
+    ) ;
+
+    q1 -> (
+        a -> q2 ;
+        b -> q1 ;
+    ) ;
+
+    q2 -> (
+        y1 -> q2 ;
+        a -> q0 ;
+        d -> q1 ;
+    ) ;
+) ;;
+
+afn_test ::= FiniteAutomaton (
+    alphabet :: { a, b } ;
+    states :: { q0, q1, q2 } ;
+    initial_state :: q0 ;
+    final_states :: { q2 } ;
+
+    q0 -> (
+        a -> q0 ;
+        a -> q1 ;
+        b -> q2 ;
+        e -> q0 ;
+    ) ;
+
+    q1 -> (
+        b -> q1 ;
+        a -> q2 ;
+    ) ;
+
+    q2 -> (
+        a, b -> q2 ;
+    ) ;
+) ;;
+
+% Gramatica regulata
+gramatica_test ::= Grammar (
+    nonterminals :: { S, A, B } ;
+    alphabet :: { a, b } ;
+    start_symbol :: S ;
+
+    S -> a&A | b&B | e ;
+    A -> a&B | b&A ;
+    B -> b&S | a&B | e ;
+) ;;
