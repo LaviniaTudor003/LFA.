@@ -2,7 +2,8 @@ Acesta tema implementează o aplicație care analizează definițiile automatelo
 Programul procesează informațiile și afișează, în mod structurat, caracteristicile esențiale ale fiecărui element identificat.
 
 - Principala provocare a fost manipularea starilor pentru a gestiona corect diferitele sectiuni ale inputului.
-  Am rezolvat acest lucru folosind o stiva de stari (yy_push_state si yy_pop_state) care imi permite sa procesez secvential fiecare componenta, fara a utiliza functii suplimentare de procesare a string-urilor.
+  Am rezolvat acest lucru folosind o stiva de stari (yy_push_state si yy_pop_state) care imi permite sa procesez secvential fiecare componenta, fara a utiliza functii suplimentare de procesare
+  a string-urilor.
 
 - Un aspect important al implementarii este modularitatea, deoarece fiecare componenta este tratata independent, cu stari si logica dedicate, permitand o intretinere si extindere usoara a codului.
   Ce m-a pus cel mai mult pe ganduri a fost mentinerea corecta a stivei din FLEX pentru a face conditiile de start reutilizabile.
