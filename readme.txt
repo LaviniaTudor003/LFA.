@@ -11,4 +11,5 @@ Programul procesează informațiile și afișează, în mod structurat, caracter
 - O alta provocare a fost gestionarea corecta a variabilelor complexe, in special in cazul tranzitiilor.
   Am rezolvat acest aspect prin expandarea domeniului variabilelor in momentul procesarii tranzitiilor, asigurand astfel o implementare robusta si flexibila.
 
-In rest tema mi s-a parut destul de intuitiva. Am facut reguli pentru cazurile specifice starilor in care ma aflu, precum citirea unui alfabet sau a tranzitiilor, unde scriam in stdout ce se cerea si/sau treceam in alte stari.
+In rest tema mi s-a parut destul de intuitiva. Am facut reguli pentru cazurile specifice starilor in care ma aflu, precum citirea unui alfabet sau a tranzitiilor
+- unde scriam in stdout ce se cerea si/sau treceam in alte stari.
